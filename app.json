@@ -1,24 +1,24 @@
 {
     "name": "NIKHIL",
     "description": "Bot For Telegram",
-    "logo": "https://tinypic.host/images/2025/01/10/Purvi-Cid.th.jpeg",
+    "logo": "https://tinypic.host/images/2025/02/07/DeWatermark.ai_1738952933236-1.png",
     "keywords": [
         "text-video",
         "video-extract",
         "pyrogram"
     ],
-    "repository": "",
-    "success_url": "https://t.me/+taZCy5OkoMUwNzI9",
+    "repository": "https://github.com/nikhilsaini098/Saini-txt-bot",
+    "success_url": "https://github.com/nikhilsaini098/Saini-txt-bot",
     "stack": "container",
     "env": {
         "API_ID": {
             "description": "Enter Your Api Id",
-            "value": "28094744",
+            "value": "",
             "required": true
         },
         "API_HASH": {
             "description": "Enter Your Api Hash",
-            "value": "a75af4285edc7747c57bb19147ca0b9b",
+            "value": "",
             "required": true
         },
         "BOT_TOKEN": {
@@ -28,7 +28,7 @@
         },
         "BOT_NAME": {
             "description": "Enter Your Telegram Bot Name",
-            "value": "@Nklurluploader_bot",
+            "value": "",
             "required": true
         },
         "MONGO_URI": {

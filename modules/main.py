@@ -9,6 +9,7 @@ import subprocess
 import urllib.parse
 import yt_dlp
 import cloudscraper
+from logs import logging
 from bs4 import BeautifulSoup
 import core as helper
 from utils import progress_bar
@@ -34,8 +35,6 @@ bot = Client(
     api_hash=API_HASH,
     bot_token=BOT_TOKEN
 )
-
-cookies_file_path = os.getenv("COOKIES_FILE_PATH", "youtube_cookies.txt")
 
 # Define aiohttp routes
 routes = web.RouteTableDef()
@@ -134,6 +133,42 @@ image_urls = [
     # Add more image URLs as needed
 ]
 
+cookies_file_path= "youtube_cookies.txt"
+
+@bot.on_message(filters.command("cookies") & filters.private)
+async def cookies_handler(client: Client, m: Message):
+    await m.reply_text(
+        "Please upload the cookies file (.txt format).",
+        quote=True
+    )
+
+    try:
+        # Wait for the user to send the cookies file
+        input_message: Message = await client.listen(m.chat.id)
+
+        # Validate the uploaded file
+        if not input_message.document or not input_message.document.file_name.endswith(".txt"):
+            await m.reply_text("Invalid file type. Please upload a .txt file.")
+            return
+
+        # Download the cookies file
+        downloaded_path = await input_message.download()
+
+        # Read the content of the uploaded file
+        with open(downloaded_path, "r") as uploaded_file:
+            cookies_content = uploaded_file.read()
+
+        # Replace the content of the target cookies file
+        with open(cookies_file_path, "w") as target_file:
+            target_file.write(cookies_content)
+
+        await input_message.reply_text(
+            "✅ Cookies updated successfully.\n📂 Saved in `youtube_cookies.txt`."
+        )
+
+    except Exception as e:
+        await m.reply_text(f"⚠️ An error occurred: {str(e)}")
+        
 # Start command handler
 @bot.on_message(filters.command(["start"]))
 async def start_command(bot: Client, message: Message):
@@ -149,7 +184,7 @@ async def start_command(bot: Client, message: Message):
     # Caption for the image
     caption = (
         "🌟 Welcome Boss😸! 🌟\n\n"
-        "➽ I am powerful uploader bot 📥\n\n➽ I Can Extract Videos & Pdf From Your Text File and Upload to Telegram\n\n➽ 𝐔𝐬𝐞 /Stop for **Stop** ⛔ working process \n\n➽ 𝐔𝐬𝐞 /saini Command To Download  Data From TXT File 🗃️ \n\n➽ 𝐌𝐚𝐝𝐞 𝐁𝐲: 𝙎𝘼𝙄𝙉𝙄 𝘽𝙊𝙏𝙎 🦁"
+        "➽ I am powerful uploader bot 📥\n\n➽ I Can Extract Videos & Pdf From Your Text File and Upload to Telegram\n\n➽ 𝐔𝐬𝐞 /Stop for **Stop** ⛔ working process \n\n➽ 𝐔𝐬𝐞 /cookies for update YouTube cookies.\n\n➽ 𝐔𝐬𝐞 /logs to check your bot logs.\n\n➽ 𝐔𝐬𝐞 /saini Command To Download  Data From TXT File 🗃️ \n\n➽ 𝐌𝐚𝐝𝐞 𝐁𝐲: 𝙎𝘼𝙄𝙉𝙄 𝘽𝙊𝙏𝙎 🦁"
     )
 
     await asyncio.sleep(1)
@@ -193,6 +228,16 @@ async def start_command(bot: Client, message: Message):
     # Delete the loading message
     await loading_message.delete()
     
+
+@bot.on_message(filters.command(["logs"]) )
+async def send_logs(bot: Client, m: Message):
+    try:
+        with open("logs.txt", "rb") as file:
+            sent= await m.reply_text("**📤 Sending you ....**")
+            await m.reply_document(document=file)
+            await sent.delete(True)
+    except Exception as e:
+        await m.reply_text(f"Error sending logs: {e}")
 
 @bot.on_message(filters.command(["stop"]) )
 async def restart_handler(_, m):

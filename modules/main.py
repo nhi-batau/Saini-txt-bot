@@ -126,10 +126,7 @@ Busy = InlineKeyboardMarkup(
 # Image URLs for the random image feature
 image_urls = [
     "https://tinypic.host/images/2025/02/07/IMG_20250207_224444_975.jpg",
-    "https://tinypic.host/images/2025/02/07/IMG_20250207_232047-1.jpg",
-    "https://tinypic.host/images/2025/02/07/IMG_20250207_235607_759.jpg",
     "https://tinypic.host/images/2025/02/07/DeWatermark.ai_1738952933236-1.png",
-    "https://tinypic.host/images/2025/02/07/IMG_20250208_002020.jpg",
     # Add more image URLs as needed
 ]
 
@@ -418,11 +415,11 @@ async def txt_handler(bot: Client, m: Message):
 
             try:  
                 
-                cc = f'**——— ✦  {str(count).zfill(3)} ✦ ———**\n\n**🎞️ Title : **  {name1} __**[{res}]**__.mp4\n\n<pre><code>**📚 Course :** {b_name}</code></pre>\n\n**🌟 Extracted By : {CR}\n📤 Uploaded By : {m.chat.id}**'
-                cc1 = f'**——— ✦  {str(count).zfill(3)} ✦ ———**\n\n**📁 Title : **  {name1} .pdf\n\n<pre><code>**📚 Course :** {b_name}</code></pre>\n\n**🌟 Extracted By : {CR}\n📤 Uploaded By : {m.chat.id}**'
-                cczip = f'**——— ✦  {str(count).zfill(3)} ✦ ———**\n\n**📁 Title : **  {name1} .zip\n\n<pre><code>**📚 Course :** {b_name}</code></pre>\n\n**🌟 Extracted By : {CR}\n📤 Uploaded By : {m.chat.id}**'  
-                ccimg = f'**——— ✦  {str(count).zfill(3)} ✦ ———**\n\n**📁 Title : **  {name1} .jpg\n\n<pre><code>**📚 Course :** {b_name}</code></pre>\n\n**🌟 Extracted By : {CR}\n📤 Uploaded By : {m.chat.id}**'  
-                
+                cc = f'**——— ✦  {str(count).zfill(3)} ✦ ———**\n\n**🎞️ Title : ** {name1} **[{res}]**.mp4\n\n**📚 Course :** {b_name}\n\n**🌟 Extracted By : {CR}\n**'
+                cc1 = f'**——— ✦  {str(count).zfill(3)} ✦ ———**\n\n**📁 Title : ** {name1} .pdf\n\n**📚 Course :** {b_name}\n\n**🌟 Extracted By : {CR}\n**'
+                cczip = f'**——— ✦  {str(count).zfill(3)} ✦ ———**\n\n**📁 Title : ** {name1} .zip\n\n**📚 Course :** {b_name}\n\n**🌟 Extracted By : {CR}\n**'  
+                ccimg = f'**——— ✦  {str(count).zfill(3)} ✦ ———**\n\n**📁 Title : ** {name1} .jpg\n\n**📚 Course :** {b_name}\n\n**🌟 Extracted By : {CR}\n**'  
+                                
                 if "drive" in url:
                     try:
                         ka = await helper.download(url, name)

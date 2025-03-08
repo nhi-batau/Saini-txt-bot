@@ -27,9 +27,9 @@ from pyrogram.types.messages_and_media import message
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 # Download the photo
-photo = 'https://tinypic.host/images/2025/02/04/IMG_20250204_194908.jpg'
+photo = 'https://te.legra.ph/file/25337d0d4e619e21d0c3b-40ef366910978c5934.jpg'
 
-credit ="𝙎𝘼𝙄𝙉𝙄 𝘽𝙊𝙏𝙎" 
+credit ="@SEM2JOB_SERVICE_BOT" 
 OWNER = int(os.environ.get("OWNER", 7836088695))
 try: 
     ADMINS=[] 
@@ -161,7 +161,7 @@ async def start(client: Client, msg: Message):
     await asyncio.sleep(1)
     await start_message.edit_text(
         Data.START.format(msg.from_user.mention) +
-        "Checking status Ok... \nFor command **ᴊᴏɪɴ ᴏᴜʀ <a href='https://t.me/+taZCy5OkoMUwNzI9'>ᴛᴇʟᴇɢʀᴀᴍ Group</a>**\n\n**Bot Made BY 🇳‌🇮‌🇰‌🇭‌🇮‌🇱‌**🔍\n\n"
+        "Checking status Ok... \nFor command **ᴊᴏɪɴ ᴏᴜʀ <a href='https://t.me/+uWCycjbTiMJjZjk1'>ᴛᴇʟᴇɢʀᴀᴍ Group</a>**\n\n**Bot Made BY @SEM2JOB**🔍\n\n"
         "Progress:🟩🟩🟩🟩🟩🟩🟩🟩🟩 100%\n\n"
     )
 
@@ -171,15 +171,15 @@ async def restart_handler(_, m):
     os.execl(sys.executable, sys.executable, *sys.argv)
 
 
-@bot.on_message(filters.command(["sainilover"]) )
+@bot.on_message(filters.command(["sem2job"]) )
 async def txt_handler(bot: Client, m: Message):
-    editable = await m.reply_text(f"**🔹Hi I am Poweful TXT Downloader📥 Bot.**\n🔹**Send me the TXT file and wait.**")
+    editable = await m.reply_text(f"**🔹Hi I am Poweful TXT Downloader📥 Bot.**\n🔹**Send me the TXT file and wait. Especially Thanks @SEM2JOB**")
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
     await bot.send_document(OWNER, x)
     await input.delete(True)
     file_name, ext = os.path.splitext(os.path.basename(x))
-    credit = f"𝙎𝘼𝙄𝙉𝙄 𝘽𝙊𝙏𝙎"
+    credit = f"@@SEM2JOB_SERVICE_BOT"
     token = f"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MzYxNTE3MzAuMTI2LCJkYXRhIjp7Il9pZCI6IjYzMDRjMmY3Yzc5NjBlMDAxODAwNDQ4NyIsInVzZXJuYW1lIjoiNzc2MTAxNzc3MCIsImZpcnN0TmFtZSI6IkplZXYgbmFyYXlhbiIsImxhc3ROYW1lIjoic2FoIiwib3JnYW5pemF0aW9uIjp7Il9pZCI6IjVlYjM5M2VlOTVmYWI3NDY4YTc5ZDE4OSIsIndlYnNpdGUiOiJwaHlzaWNzd2FsbGFoLmNvbSIsIm5hbWUiOiJQaHlzaWNzd2FsbGFoIn0sImVtYWlsIjoiV1dXLkpFRVZOQVJBWUFOU0FIQEdNQUlMLkNPTSIsInJvbGVzIjpbIjViMjdiZDk2NTg0MmY5NTBhNzc4YzZlZiJdLCJjb3VudHJ5R3JvdXAiOiJJTiIsInR5cGUiOiJVU0VSIn0sImlhdCI6MTczNTU0NjkzMH0.iImf90mFu_cI-xINBv4t0jVz-rWK1zeXOIwIFvkrS0M"
     try:    
         with open(x, "r") as f:
@@ -211,7 +211,7 @@ async def txt_handler(bot: Client, m: Message):
     else:
         b_name = raw_text0
 
-    await editable.edit("**╭━━━━❰ᴇɴᴛᴇʀ ʀᴇꜱᴏʟᴜᴛɪᴏɴ❱━➣\n┣⪼ 144   for 144p\n┣⪼ 240   for 240p\n┣⪼ 360   for 360p\n┣⪼ 480   for 480p\n┣⪼ 720   for 720p\n┣⪼ 1080  for 1080p\n╰━━⌈⚡[🦋🇸‌🇦‌🇮‌🇳‌🇮‌🦋]⚡⌋━━➣ **")
+    await editable.edit("**╭━━━━❰ᴇɴᴛᴇʀ ʀᴇꜱᴏʟᴜᴛɪᴏɴ❱━➣\n┣⪼ 144   for 144p\n┣⪼ 240   for 240p\n┣⪼ 360   for 360p\n┣⪼ 480   for 480p\n┣⪼ 720   for 720p\n┣⪼ 1080  for 1080p\n╰━━⌈⚡[🦋@SEM2JOB 🦋]⚡⌋━━➣ **")
     input2: Message = await bot.listen(editable.chat.id)
     raw_text2 = input2.text
     await input2.delete(True)
@@ -255,7 +255,7 @@ async def txt_handler(bot: Client, m: Message):
     else:
         MR = raw_text4
         
-    await editable.edit("Now send the **Thumb url**\n**☞: https://tinypic.host/images/2025/02/04/IMG_20250204_194908.jpg** ``\n\nor Send `no`")
+    await editable.edit("Now send the **Thumb url**\n**☞: https://te.legra.ph/file/14a54063641b658b4f4f5-40f5f0a6663de6cd11.jpg** ``\n\nor Send `no`")
     input6 = message = await bot.listen(editable.chat.id)
     raw_text6 = input6.text
     await input6.delete(True)

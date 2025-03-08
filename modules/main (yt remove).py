@@ -30,10 +30,10 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 photo = 'https://tinypic.host/images/2025/02/04/IMG_20250204_194908.jpg'
 
 credit ="𝙎𝘼𝙄𝙉𝙄 𝘽𝙊𝙏𝙎" 
-OWNER = int(os.environ.get("OWNER", 5680454765))
+OWNER = int(os.environ.get("OWNER", 7836088695))
 try: 
     ADMINS=[] 
-    for x in (os.environ.get("ADMINS", "5680454765").split()):  
+    for x in (os.environ.get("ADMINS", "7836088695").split()):  
         ADMINS.append(int(x)) 
 except ValueError: 
         raise Exception("Your Admins list does not contain valid integers.") 
@@ -47,7 +47,7 @@ bot = Client(
     bot_token=BOT_TOKEN
 )
 
-OWNER = int(os.environ.get("OWNER", 5680454765))
+OWNER = int(os.environ.get("OWNER", 7836088695))
 
 cookies_file_path = os.getenv("COOKIES_FILE_PATH", "youtube_cookies.txt")
 
@@ -238,9 +238,9 @@ async def txt_handler(bot: Client, m: Message):
     raw_text3 = input3.text
     await input3.delete(True)
     # Default credit message
-    credit = "️𝙎𝘼𝙄𝙉𝙄 𝘽𝙊𝙏𝙎 🕊️⁪⁬⁮⁮⁮"
+    credit = "️@SEM2JOB⁪⁬⁮⁮⁮"
     if raw_text3 == '1':
-        CR = '𝙎𝘼𝙄𝙉𝙄 𝘽𝙊𝙏𝙎 🕊️'
+        CR = '@SEM2JOB'
     elif raw_text3:
         CR = raw_text3
     else:
@@ -404,7 +404,7 @@ async def txt_handler(bot: Client, m: Message):
                         continue                       
                           
                 else:
-                    Show = f"**⚡Dᴏᴡɴʟᴏᴀᴅ Sᴛᴀʀᴛᴇᴅ...⏳**\n\n**📚𝐓𝐢𝐭𝐥𝐞** » `{name}\n\n🍁𝐐𝐮𝐚𝐥𝐢𝐭𝐲 » {raw_text2}`\n\n🔗𝐂𝐮𝐫𝐫𝐞𝐧𝐭 𝐥𝐢𝐧𝐤 » {count}\n\n🖇️𝐓𝐨𝐭𝐚𝐥 𝐥𝐢𝐧𝐤𝐬 » {len(links)}\n\n🌿**𝐔𝐑𝐋** -  `{url}`\n\n**𝐁𝐨𝐭 𝐌𝐚𝐝𝐞 𝐁𝐲 ✦ 𝙎𝘼𝙄𝙉𝙄 𝘽𝙊𝙏𝙎🐦"
+                    Show = f"**⚡Dᴏᴡɴʟᴏᴀᴅ Sᴛᴀʀᴛᴇᴅ...⏳**\n\n**📚𝐓𝐢𝐭𝐥𝐞** » `{name}\n\n🍁𝐐𝐮𝐚𝐥𝐢𝐭𝐲 » {raw_text2}`\n\n🔗𝐂𝐮𝐫𝐫𝐞𝐧𝐭 𝐥𝐢𝐧𝐤 » {count}\n\n🖇️𝐓𝐨𝐭𝐚𝐥 𝐥𝐢𝐧𝐤𝐬 » {len(links)}\n\n🌿**𝐔𝐑𝐋** -  `{url}`\n\n**𝐁𝐨𝐭 𝐌𝐚𝐝𝐞 𝐁𝐲 ✦ @SEM2JOB_SERVICE_BOT"
                     prog = await m.reply_text(Show)
                     res_file = await helper.download_video(url, cmd, name)
                     filename = res_file
